@@ -2,5 +2,31 @@
   "dependencies": {
     "yarn": "^1.22.19"
   },
-  "main": "./dist/index.min.js"
+  "main": "./dist/index.min.js",
+  "name": "keyri-front-end",
+  "version": "0.0.1",
+  "description": "web front end for the keyri API",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWally/keyri-front-end.git"
+  },
+  "keywords": [
+    "keyri",
+    "qr",
+    "qr-auth",
+    "login",
+    "passkeys",
+    "webauthn"
+  ],
+  "author": "Justin W. Wolcott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWally/keyri-front-end/issues"
+  },
+  "homepage": "https://github.com/JWally/keyri-front-end#readme",
+  "files": ["dist"]
 }
