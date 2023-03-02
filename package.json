@@ -4,7 +4,7 @@
   },
   "main": "./dist/index.min.js",
   "name": "keyri-front-end",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "web front end for the keyri API",
   "devDependencies": {},
   "scripts": {
@@ -28,5 +28,7 @@
     "url": "https://github.com/JWally/keyri-front-end/issues"
   },
   "homepage": "https://github.com/JWally/keyri-front-end#readme",
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
