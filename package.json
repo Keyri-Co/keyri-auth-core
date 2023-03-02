@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "yarn": "^1.22.19"
+  },
+  "main": "./dist/index.min.js"
+}
