@@ -8,7 +8,6 @@
   "description": "web front end for the keyri API",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
