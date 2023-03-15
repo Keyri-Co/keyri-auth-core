@@ -4,7 +4,7 @@
   },
   "main": "./dist/index.min.js",
   "name": "keyri-front-end",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "web front end for the keyri API",
   "devDependencies": {},
   "scripts": {
