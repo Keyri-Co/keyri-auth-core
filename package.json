@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JWally/keyri-front-end.git"
+    "url": "git+https://github.com/Keyri-Co/keyri-front-end.git"
   },
   "keywords": [
     "keyri",
@@ -25,9 +25,9 @@
   "author": "Justin W. Wolcott",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JWally/keyri-front-end/issues"
+    "url": "https://github.com/Keyri-Co/keyri-front-end/issues"
   },
-  "homepage": "https://github.com/JWally/keyri-front-end#readme",
+  "homepage": "https://github.com/Keyri-Co/keyri-front-end#readme",
   "files": [
     "dist"
   ]
