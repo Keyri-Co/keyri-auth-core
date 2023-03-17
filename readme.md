@@ -23,4 +23,13 @@ or
 
 # Hello World App
 
+If you want to set up a "toy" web-application to get a feel for how everything ties together, do the following:
 
+```
+$ git clone https://github.com/Keyri-Co/keyri-hello-world
+$ cd ./keyri-hello-world
+$ npm install
+$ node server.js
+```
+
+Set your browser at `localhost` and you should see the following:
