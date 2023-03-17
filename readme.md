@@ -33,3 +33,6 @@ $ node server.js
 ```
 
 Set your browser at `localhost` and you should see the following:
+
+![image](https://user-images.githubusercontent.com/2482935/226066237-21e75bbc-72c6-4785-b2e3-bf3aa6ff469f.png)
+
