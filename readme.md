@@ -32,8 +32,6 @@ $ npm install
 $ node server.js
 ```
 
-Set your browser at `localhost` and you should see the following:
-
-![image](https://user-images.githubusercontent.com/2482935/226066365-d9a033c3-0d0a-4e20-ad16-ee2df3efcc17.png)
+Set your browser at `http://localhost` and it should work.
 
 
