@@ -40,7 +40,7 @@ $ node server.js
 
 Set your browser at `http://localhost` and it should work.
 
-# Desktop QR Quickstart
+# DESKTOP Quickstart
 
 In order to get a QR on your login page, you'll need to do the following:
 
@@ -65,13 +65,38 @@ In order to get a QR on your login page, you'll need to do the following:
 
 4. Start the `IFrameManager`
 
-```html
-<script src="./dist/index.min.js"></script>
-<script type="module">
-  const { IFrameManager } = KeyriFrontEnd;
+```mjs
+  import { IFrameManager } from 'keyri-front-end';
   const iFrameManager = new IFrameManager();
   await iFrameManager.start();
-</script>
 ```
 
-p.s. if you're using a build tool and can import libraries here - please feel free to just `import {IFrameManager} from 'keyri-front-end'`!
+
+
+## Embedding the IFrame
+
+Embed an iframe in your authentication page in the desired DOM element with ./KeyriQR.html as its src
+
+```html
+<!-- PRODUCTION -->
+<iframe
+    scrolling="no"
+    frameborder="0"
+    height="500"
+    width="500"
+    src="./qr.html?qsd=false&mobile=http://localhost/mobile.html"
+    id="qr-iframe"
+></iframe>
+```
+
+```html
+<!-- DEVELOPMENT -->
+<iframe
+    scrolling="no"
+    frameborder="0"
+    height="500"
+    width="500"
+    src="./qr.html?qsd=false&Origin=your.site.com&Environment=dev&mobile=http://localhost/mobile.html"
+    id="qr-iframe"
+></iframe>
+```
