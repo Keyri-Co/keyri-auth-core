@@ -40,9 +40,9 @@ $ node server.js
 
 Set your browser at `http://localhost` and it should work.
 
-# DESKTOP Quickstart
+# DESKTOP
 
-In order to get a QR on your login page, you'll need to do the following:
+To put a QR on your login page you'll need to do the following:
 
 1. Serve an iframe
 
@@ -52,7 +52,7 @@ In order to get a QR on your login page, you'll need to do the following:
 
 ## Serving An IFrame
 
-1. Create a file called `qr.html` and serve it from the same origin as your login page (e.g. a `/public` directory)
+1. Create a file called `qr.html` (or whatever) and serve it from the same origin as your login page (e.g. a `/public` directory)
 
 2. _RECOMMENDED_: serve everything on your page's origin with the header `X-Frame-Options: SAMEORIGIN` (examples [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#examples))
 
@@ -71,8 +71,6 @@ In order to get a QR on your login page, you'll need to do the following:
   await iFrameManager.start();
 ```
 
-
-
 ## Embedding the IFrame
 
 Embed an iframe in your authentication page in the desired DOM element with ./KeyriQR.html as its src
@@ -84,7 +82,7 @@ Embed an iframe in your authentication page in the desired DOM element with ./Ke
     frameborder="0"
     height="500"
     width="500"
-    src="./qr.html?qsd=false&mobile=http://localhost/mobile.html"
+    src="./qr.html?qsd=false&mobile=http://my.site.com/mobile.html"
     id="qr-iframe"
 ></iframe>
 ```
@@ -99,4 +97,65 @@ Embed an iframe in your authentication page in the desired DOM element with ./Ke
     src="./qr.html?qsd=false&Origin=your.site.com&Environment=dev&mobile=http://localhost/mobile.html"
     id="qr-iframe"
 ></iframe>
+```
+
+## QR Event Handling
+
+### - Getting Data
+So you've got a QR code on your page now? Great! Next, you'll probably want to something with the information coming out of it and your user's phone.
+
+### - Event Types
+Below are the event types that are currently avaible to listen to from the library:
+
+* qr_event_mobile_connect - this is when a mobile device connects to your QR Code
+
+* qr_event_socket_error - when there's an error coming from the API
+
+* qr_event_risk_data - Risk Data about the connection coming from the API
+
+* qr_event_session_validate - Decrypted data from the mobile app
+
+* qr_event_appless_login - If you're using mobile QR login, this is what will be emmitted when the user is logged in
+
+* qr_event_appless_registration - When the user registers their phone via QR for appless, this is the event that it emmitted
+
+### - Setup
+
+```mjs
+// /src/mjs/eventManager.mjs
+
+import {EventManager} from "keyri-front-end";
+window.eventManager = new EventManager(window);
+
+// Set handler for standard Keyri App Based Validation
+window.addEventListener("qr_event_session_validate", async (evt) => {
+  alert("SESSION VALIDATE!!");
+  console.log("SESSION VALIDATE", evt);
+});
+
+// Set handler for whatever risk data comes from the QR
+window.addEventListener("qr_event_risk_data", async (evt) => {
+  let data = evt.detail.data.information.data;
+  console.log("RISK DATA", JSON.parse(atob(data)));
+});
+
+// Set handler for any errors coming out of the QR
+window.addEventListener("qr_event_socket_error", async (evt) => {
+  alert(evt?.detail?.data);
+});
+
+// Set handler for full cycle appless login
+window.addEventListener("qr_event_appless_login", async (evt) => {
+  console.log(evt);
+  alert("LOGGED IN FROM PHONE");
+});
+
+// Set handler for full cycle appless registration
+window.addEventListener("qr_event_appless_registration", async (evt) => {
+  console.log(evt);
+  alert("REGISTERED PHONE");
+});
+
+export default true;
+
 ```
