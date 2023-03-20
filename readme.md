@@ -21,9 +21,15 @@ or
 
 `$ yarn add keyri-front-end`
 
+# High Level Objectives
+
+At the end of the day, the goal of Keyri is to prove to your __SERVER__ that a trusted device (__THE USER'S PHONE__) legitimately gave permission to an unknown device (__A DESKTOP BROWSER__) to do stuff on its behalf.
+
+This library ties these three things together as safe and easily as possible so you can focus on building your business; not user auth.
+
 # Hello World App
 
-If you want to set up a "toy" web-application to get a feel for how everything ties together, do the following:
+If you want to set up a "demo" web-application to get a feel for how everything ties together, do the following:
 
 ```
 $ git clone https://github.com/Keyri-Co/keyri-hello-world
@@ -44,7 +50,7 @@ In order to get a QR on your login page, you'll need to do the following:
 
 3. Set up an events listener to handle events emitting from this library
 
-## Serve An IFrame
+## Serving An IFrame
 
 1. Create a file called `qr.html` and serve it from the same origin as your login page (e.g. a `/public` directory)
 
@@ -67,3 +73,5 @@ In order to get a QR on your login page, you'll need to do the following:
   await iFrameManager.start();
 </script>
 ```
+
+p.s. if you're using a build tool and can import libraries here - please feel free to just `import {IFrameManager} from 'keyri-front-end'`!
