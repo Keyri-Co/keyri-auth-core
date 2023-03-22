@@ -21,12 +21,6 @@ or
 
 `$ yarn add keyri-front-end`
 
-# High Level Objectives
-
-At the end of the day, the goal of Keyri is to prove to your __SERVER__ that a trusted device (__THE USER'S PHONE__) legitimately gave permission to an unknown device (__A DESKTOP BROWSER__) to do stuff on its behalf.
-
-This library ties these three things together as safe and easily as possible so you can focus on building your business; not user auth.
-
 # Hello World App
 
 If you want to set up a "demo" web-application to get a feel for how everything ties together, do the following:
@@ -73,7 +67,7 @@ To put a QR on your login page you'll need to do the following:
 
 ## Embedding the IFrame
 
-Embed an iframe in your authentication page in the desired DOM element with ./KeyriQR.html as its src
+Embed an iframe in your authentication page in the desired DOM element with ./qr.html as its src
 
 ```html
 <!-- PRODUCTION -->
@@ -122,14 +116,17 @@ Below are the event types that are currently avaible to listen to from the libra
 ### - Setup
 
 ```mjs
-// /src/mjs/eventManager.mjs
+/**
+ * 
+ * ./src/mjs/eventManager.mjs
+ *
+ **/ 
 
 import {EventManager} from "keyri-front-end";
 window.eventManager = new EventManager(window);
 
 // Set handler for standard Keyri App Based Validation
 window.addEventListener("qr_event_session_validate", async (evt) => {
-  alert("SESSION VALIDATE!!");
   console.log("SESSION VALIDATE", evt);
 });
 
@@ -144,18 +141,70 @@ window.addEventListener("qr_event_socket_error", async (evt) => {
   alert(evt?.detail?.data);
 });
 
-// Set handler for full cycle appless login
-window.addEventListener("qr_event_appless_login", async (evt) => {
-  console.log(evt);
-  alert("LOGGED IN FROM PHONE");
-});
-
-// Set handler for full cycle appless registration
-window.addEventListener("qr_event_appless_registration", async (evt) => {
-  console.log(evt);
-  alert("REGISTERED PHONE");
-});
-
 export default true;
+```
+
+# PASSKEYS - DESKTOP
+
+Lorem Ipsum Dolor Sed Amat...
+
+## Setup
+
+Do something like this.
+
+```mjs
+
+//
+// This file sets up our "localAppless" object
+// and exposes some functions that we can tie to buttons
+// on the demo page
+//
+
+const { ApplessLocal } = KeyriFrontEnd;
+
+//
+// Set up
+//
+let localAppless = new ApplessLocal(
+  "./api/passkey/register",
+  "./api/passkey/login"
+);
 
 ```
+
+## Local Registration
+In the same file (or not) do this:
+
+```mjs
+// Register a LOGGED IN USER
+async function makeLocalPassKey(e) {
+  e.preventDefault();
+  let idToken = "{USER-SESSION-TOKEN}";
+  await localAppless.register(idToken);
+  alert("LOCAL PASS KEY CREATED");
+}
+```
+Where `{USER-SESSION-TOKEN}` is the session token or something to prove the user trying to register is logged in that you can prove server side.
+
+
+## Local Authentication
+```mjs
+// Authenticate an EXISTING USER
+async function authenticateLocalPasskey(e) {
+  e.preventDefault();
+  let authData = await localAppless.authenticate(true);
+  console.log({ authData });
+  alert("LOGGED IN!");
+}
+```
+
+# PASSKEYS - QR
+
+You can also use your user's phone as an auth device with QR, blah blah blah
+
+## Setup
+
+Nothing if you are set up for local passkeys.
+
+## Registration
+
