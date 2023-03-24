@@ -12,11 +12,11 @@ Below are some of the neat things you can do with the library:
 
 __Using Yarn or NPM__
 
-`$ npm insall --save keyri-front-end`
+`$ npm insall --save keyri-auth-core`
 
 or
 
-`$ yarn add keyri-front-end`
+`$ yarn add keyri-auth-core`
 
 # Hello World App
 
