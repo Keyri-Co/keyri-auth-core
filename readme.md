@@ -8,6 +8,10 @@ Front End, Mobile Front End, and Server Side utilities for interfacing with the 
 * Verify Users and Register Passkeys
 * Much more...! 
 
+# Documentation
+
+For official documentation goto https://docs.keyri.com
+
 # Installation
 
 __Using Yarn or NPM__
@@ -31,6 +35,3 @@ $ node server.js
 
 Set your browser at `http://localhost` and it should work.
 
-# Documentation
-
-For official documentation goto https://docs.keyri.com
