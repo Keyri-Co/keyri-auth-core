@@ -2,11 +2,11 @@
 
 Front End, Mobile Front End, and Server Side utilities for interfacing with the Keyri API.
 
-Below are some of the neat things you can do with the library:
-
 * Create Dynamic Logon QRs
 * Register and Validate Passkeys on Your User's Desktop
 * Register and Validate Passkeys on Your User's Phone (via QR!) 
+* Verify Users and Register Passkeys
+* Much more...! 
 
 # Installation
 
