@@ -1,3 +1,5 @@
+dist/keyri-0.10.2.1.min.js
+dist/keyri-0.10.2.min.js
 node_modules
 package-lock.json
 *.bat
