@@ -4,7 +4,7 @@
   },
   "main": "./dist/index.min.js",
   "name": "keyri-auth-core",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "library to interface with the keyri API",
   "devDependencies": {},
   "scripts": {
