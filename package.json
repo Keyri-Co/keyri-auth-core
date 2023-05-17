@@ -6,9 +6,12 @@
   "name": "keyri-auth-core",
   "version": "3.3.2",
   "description": "library to interface with the keyri API",
-  "devDependencies": {},
+  "devDependencies": {
+    "http-server": "*"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "demo": "http-server -p 80 ./"
   },
   "repository": {
     "type": "git",
