@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./iframe.css"/>
+  </head>
+  <body>
+    <div class="pre-blurry" id="qr-target"></div>
+    <div id="qr-lay-over"></div>
+  </body>
+</html>
+
+<script src="../dist/index.min.js"></script>
+<script type="module">
+
+  // Note. If you're using a build tool like webpack, feel free
+  // to import `IFrameManager` from 'keyri-auth-core'. If you're
+  // not using a modular approach, there's a global `KeyriFrontEnd`
+  // that is exposed by using the library.
+  
+  
+  const { IFrameManager } = KeyriFrontEnd;
+  const iFrameManager = new IFrameManager();
+  await iFrameManager.start();
+</script>
